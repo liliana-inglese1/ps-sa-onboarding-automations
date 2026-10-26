@@ -1,0 +1,14 @@
+# Packaged skills
+dist/
+*.skill
+
+# Never commit generated client material
+output/
+outputs/
+plans/
+transcripts/
+*.csv
+*.docx
+*.pdf
+*.env
+.DS_Store
