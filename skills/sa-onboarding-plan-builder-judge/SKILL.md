@@ -16,7 +16,7 @@ Re-derives what the plan should contain from the original inputs, then compares 
 
 ## Two modes
 
-**Audit mode** (default): the user provides the client name or the links to the produced Sheet and Doc. Re-read the original inputs yourself (handover in Drive, kick-off in Fellow, Planhat record, SIP data the user supplies, relevant Hive cards, and the answers the SA gave in the conversation). Do not rely on the skill's Input Digest or Summary tab as evidence of what the inputs say.
+**Audit mode** (default): the user provides the client name or the links to the produced Sheet and Doc. Re-read the original inputs yourself (handover in Drive, kick-off in Fellow, Planhat record, SIP posts in Slack `#sa-sip-early-handover`, relevant Hive cards, and the answers the SA gave in the conversation). Do not rely on the skill's Input Digest or Summary tab as evidence of what the inputs say.
 **Regression mode**: run the built-in golden cases below. No user inputs needed.
 
 Read `sa-onboarding-plan-builder/references/plan-rules.md` and `template-baseline.md` first. They define the rules being audited.
@@ -97,7 +97,7 @@ Report: verdict, then a step table (✅/⚠️/❌ with evidence), then a number
 All cases use fictional clients and inputs. Run each against the skill's rules, comparing the produced plan with the expected result.
 
 **TC-1: Clean happy path (Northwind Games, fictional)**
-Input: Handover: Phrase TMS and Strings; UI strings for a mobile game plus a help center; 8 target languages; GitHub connector wanted; AI Translation Agent desired; 2 TMX files and 1 term base from a previous platform; no style guide; 2 LSPs paid through Phrase. Kick-off held, go-live in 14 weeks. SA states budget 12 sessions. Planhat reachable. SIP data pasted.
+Input: Handover: Phrase TMS and Strings; UI strings for a mobile game plus a help center; 8 target languages; GitHub connector wanted; AI Translation Agent desired; 2 TMX files and 1 term base from a previous platform; no style guide; 2 LSPs paid through Phrase. Kick-off held, go-live in 14 weeks. SA states budget 12 sessions. Planhat reachable. A SIP thread for the client exists in `#sa-sip-early-handover`.
 
 | Step | Expected |
 |---|---|
@@ -114,7 +114,7 @@ Input: as TC-1 but no kick-off notes exist in Fellow and the handover is the onl
 Expected: plan is PROVISIONAL with a banner; Q1, Q3 flagged unknown and asked; "scope TBC" in Comments; digest shows kick-off as "not applicable (not held)". Plan must not claim kick-off facts. Overall: pass with 🟡 (provisional is the correct handling, not an error).
 
 **TC-3: Known failure mode, placeholders silently filled**
-Input: Planhat Plan Name is "Professional", mapping undefined, SIP data not available, SA has not stated a budget. The skill output says "Budget: 10 sessions (Professional plan)" and the digest lists SIP as "used".
+Input: Planhat Plan Name is "Professional", mapping undefined, no SIP post for the client exists in `#sa-sip-early-handover`, SA has not stated a budget. The skill output says "Budget: 10 sessions (Professional plan)" and the digest lists SIP as "used".
 Expected: Step A ❌ (SIP "used" is false), Step D ❌ (budget inferred from plan tier). Overall 🔴 Failed. Correct behaviour was to ask the SA for the budget and record SIP as "not provided".
 
 **TC-4: Known failure mode, invented link**

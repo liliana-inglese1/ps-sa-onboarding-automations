@@ -11,11 +11,19 @@ Tool names differ between surfaces. Use `tool_search` to load the connector tool
 - Extract: contract scope (products and plans bought), content types, languages, integrations mentioned, MT/AI intent, legacy assets (TM, TB, style guides), stakeholders, commitments made during the sale, go-live dates.
 - Treat sales commitments as requirements to confirm, not facts. Sellers often promise scope that has not been validated.
 
-## 2. SIP data
+## 2. SIP data (Slack #sa-sip-early-handover)
 
-> ⚠️ PLACEHOLDER: the location and format of SIP data has not been confirmed. Until it is, ask the user to paste the relevant SIP fields or point to the file. Record "SIP: not provided" in the digest if they cannot. Do not guess its contents.
+SIP data lives in the Slack channel `#sa-sip-early-handover` (channel ID `C0C6VHNLGPL`).
 
-When confirmed, replace this section with: where it lives, how to search it, and which fields feed which discovery question.
+- Search the channel with the client name. Use the Slack search tool with the channel scope (for example `in:#sa-sip-early-handover <client>`), and fall back to reading the channel history and filtering it if search returns nothing. Include likely name variants: legal name, brand or short name, and abbreviations seen in the handover or Planhat.
+- For each hit, read the whole thread (`slack_read_thread`), because replies often carry the answers. Note the post date and author.
+- Several hits for one client: use the most recent as the baseline and record the older ones as history. Say which you used.
+- Join and leave notices in the channel are noise. Ignore them.
+- Extract whatever the posts contain that feeds the 11 discovery questions: content types, formats, integrations, teams, assets to migrate, dates, MT/AI intent. Record each fact with the post date.
+- Nothing found: set the digest status to "not found in #sa-sip-early-handover" and ask the SA whether SIP data exists elsewhere. Do not guess its contents and do not treat an empty channel as "not applicable".
+- The channel is read-only for this skill. Never post, reply or react.
+
+> ⚠️ UNCONFIRMED: which fields SIP posts carry and how they are laid out has not been confirmed, because the channel's recent history held only join notices when this was written. After the first real run, replace this note with the observed format and map its fields to the discovery questions.
 
 ## 3. Kick-off meeting notes (Fellow)
 

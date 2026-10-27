@@ -31,7 +31,7 @@ python -m scripts.package_skill skills/sa-onboarding-plan-builder ./dist
 
 ## Open placeholders (track as issues)
 
-1. SIP data: location and fields
+1. SIP data: location is set (`#sa-sip-early-handover`); the message format still needs confirming on a real run
 2. Planhat Plan Name -> session count mapping
 3. Preferred self-serve content format
 4. Pacing thresholds (urgent / standard / relaxed) need calibration

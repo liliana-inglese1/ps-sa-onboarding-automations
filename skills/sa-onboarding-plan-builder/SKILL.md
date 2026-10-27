@@ -39,7 +39,7 @@ Turns what Phrase already knows about a new client into a reviewed, ready-to-run
 Fetch these four at the same time, following `references/input-sources.md`:
 
 - SE handover notes (Drive)
-- SIP data (PLACEHOLDER source: ask the user to paste or point to it)
+- SIP data (Slack `#sa-sip-early-handover`, channel ID `C0C6VHNLGPL`): search it with the client name and read the matching messages and threads
 - Kick-off notes (Fellow), only if the kick-off has happened
 - Planhat company record (Plan Name, TMS ID and other custom fields via explicit SELECT)
 
@@ -117,7 +117,7 @@ Link both files in the sentence that says what you did. Give a three-line summar
 
 ## PLACEHOLDERS to resolve (flagged in the files above)
 
-1. SIP data location and fields (`references/input-sources.md`)
+1. SIP message format: the channel's recent history showed no SIP posts to learn from, so which fields SIP messages carry is unconfirmed (`references/input-sources.md`)
 2. Planhat Plan Name → session count mapping (`references/input-sources.md`, `references/plan-rules.md`)
 3. Preferred self-serve content format (`references/atlas-self-serve.md`)
 4. Pacing thresholds (`references/plan-rules.md`) are defaults and need calibration against real engagements
